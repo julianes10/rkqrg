@@ -1,0 +1,11 @@
+[Unit]
+Description = binding
+
+[Service]
+Type = simple
+ExecStart = /usr/local/bin/binding.sh
+Restart = on-abort
+RestartSec = 5
+
+[Install]
+WantedBy = multi-user.target

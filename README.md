@@ -57,7 +57,19 @@ Once you put roms on folders, if emulator has been installed (from core or main 
 TODO
 
 ## Miscelaneous settings
-TODO
+Automount with usb stick label. https://github.com/six-k/automount-usb.git
+Include in this repo as submodule. Run it with sudo ./CONFIGURE.sh
+For transmission daemon setings remember 
+
+### Mount usb disk with bind 
+Useful for sharing media files and library.
+
+### NFS server
+apt-get install nfs-common nfs-kernel-server
+Copy file from this repo to share files structure on your local network using nfs. Pls notice it is unsecure.
+sudo cp etc/exports /etc/exports
+sudo systemctl restart nfs-kernel-server.service nfs-common.service 
+
 ## Interesting links and repos
 [retropie for download | https://retropie.org.uk]
 [retropie repos| https://github.com/retropie]
