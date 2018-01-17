@@ -1,3 +1,6 @@
+#!/usr/bin/env bash
+PATH="$PATH:/usr/bin:/usr/local/bin:/usr/sbin:/usr/local/sbin:/bin:/sbin"
+
 LOG=/home/pi/booting.log
 >$LOG
 
