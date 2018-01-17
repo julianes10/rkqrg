@@ -1,7 +1,7 @@
 LOG=/home/pi/booting.log
 >$LOG
 
-mkdir -p /mnt/nfsserver/
+mkdir -p /mnt/nfsserver/sg2
 echo "\nBooting...">$LOG
 
 ls /media/SG2>>$LOG
