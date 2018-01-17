@@ -1,0 +1,3 @@
+[submodule "automount-usb"]
+	path = automount-usb
+	url = https://github.com/six-k/automount-usb.git
