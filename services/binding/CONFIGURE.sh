@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 PATH="$PATH:/usr/bin:/usr/local/bin:/usr/sbin:/usr/local/sbin:/bin:/sbin"
-chmod 755 ./*.sh
 
 cp binding.sh /usr/local/bin/
 

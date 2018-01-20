@@ -6,7 +6,7 @@ GIT_DIR="/home/pi/git/"
 TARGET_DIR="/opt/retropie/configs/ports/kodi/addons"
 TO_ZIP_DIR=$PLUGIN 
 
-logger "$0 Updating addon IT..."
+logger "$0 Updating addon $PLUGIN..."
 cd /home/pi/git/xbmc
 git pull
 cd $GIT_DIR/$PLUGIN
@@ -21,24 +21,20 @@ cmake -DADDONS_TO_BUILD=pvr.iptvsimple -DADDON_SRC_PREFIX=../.. -DCMAKE_BUILD_TY
 make package-pvr.iptvsimple
 
 
-if [ -d "$TARGET_DIR/$PLUGIN" ]; then
-  logger "$0 Hot updating addon... TODO"
+#if [ -d "$TARGET_DIR/$PLUGIN" ]; then
+#  logger "$0 Hot updating addon $PLUGIN... TODO"
 #  cp -rf * "$TARGET_DIR/$PLUGIN/"
 #  chown -R pi:pi "$TARGET_DIR/$PLUGIN/"
-fi
-logger "$0 Generate zip file "$PLUGIN.zip" ..."
-cd ..
-zip -r "$PLUGIN.zip" $PLUGIN   
-chown pi:pi "$PLUGIN.zip"
-logger "$0 addon SC updated"
+#fi
+#logger "$0 Generate zip file "$PLUGIN.zip" ..."
+#cd ..
+#zip -r "$PLUGIN.zip" $PLUGIN   
+#chown pi:pi "$PLUGIN.zip"
+mv -f /home/pi/git/pvr.iptvsimple/build/pvr.iptvsimple-prefix/src/pvr.iptvsimple-build/addon-pvr.iptvsimple-3.4.1.zip $GIT_DIR
+chown pi:pi "*.zip"
+logger "$0 addon $PLUGIN updated"
 
 
-
-
-mkdir -p /opt/retropie/configs/ports/kodi/addons/pvr.iptvsimple/
-cp -rf /home/pi/git/target/python/kodi-17-krypton/pvr.iptvsimple/* /opt/retropie/configs/ports/kodi/addons/pvr.iptvsimple/
-chown -R pi:pi /opt/retropie/configs/ports/kodi/addons/pvr.iptvsimple/
-logger "$0 addon IT updated"
 
 
 
