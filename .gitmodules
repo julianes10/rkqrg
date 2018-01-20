@@ -1,3 +1,6 @@
 [submodule "services/automount-usb"]
 	path = services/automount-usb
 	url = https://github.com/six-k/automount-usb.git
+[submodule "mytvlist"]
+	path = mytvlist
+	url = https://julianes10@bitbucket.org/julianes10/mytvlist.git
