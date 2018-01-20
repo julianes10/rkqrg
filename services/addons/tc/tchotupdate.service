@@ -1,0 +1,12 @@
+[Unit]
+Description = tchotupdate
+
+[Service]
+Type = simple
+ExecStart = /usr/local/bin/tchotupdate.sh
+Restart = on-abort
+RestartSec = 5
+
+[Install]
+WantedBy = multi-user.target
+

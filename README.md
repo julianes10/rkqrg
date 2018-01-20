@@ -4,9 +4,12 @@ Retropie and kodi quick restore guide and scrips
 ## Introduction
 
 This is just to recover quickly a pi from scratch with the following stuff:
-- Retropie 
-- Kodi  (***booting first)
-- Miscelaneus features for connectivity
+* Retropie 
+* Kodi  (***booting first)
+* Miscelaneus features
+** Improvement for sharing files connectivity (nfs settings)
+** keep update from git some kodi stuff
+
 
 The repo consists of basically a guide (this readme file to not forget the steps) and some scripts
 
@@ -67,9 +70,11 @@ Useful for sharing media files from usb hard disk over nfs
 
 #### NFS server settings
 apt-get install nfs-common nfs-kernel-server
+
 Copy file from this repo to share files structure on your local network using nfs. Pls notice it is unsecure.
 sudo cp etc/exports /etc/exports
 sudo systemctl restart nfs-kernel-server.service nfs-common.service 
+sudo update-rc.d rpcbind enable && sudo update-rc.d nfs-common enable
 
 ## Interesting links and repos
 [retropie for download | https://retropie.org.uk]
