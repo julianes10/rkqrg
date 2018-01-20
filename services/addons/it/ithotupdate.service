@@ -1,9 +1,9 @@
 [Unit]
-Description = tchotupdate
+Description = ithotupdate
 
 [Service]
 Type = simple
-ExecStart = /usr/local/bin/tchotupdate.sh
+ExecStart = /usr/local/bin/ithotupdate.sh
 Restart = on-abort
 RestartSec = 5
 

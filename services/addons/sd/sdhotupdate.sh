@@ -6,7 +6,7 @@ GIT_DIR="/home/pi/git/"
 TARGET_DIR="/opt/retropie/configs/ports/kodi/addons"
 TO_ZIP_DIR=$PLUGIN 
 
-logger "$0 Updating addon SC..."
+logger "$0 Updating addon $PLUGIN..."
 cd $GIT_DIR/$PLUGIN
 git pull
 if [ -d "$TARGET_DIR/$PLUGIN" ]; then
@@ -18,5 +18,5 @@ logger "$0 Generate zip file "$PLUGIN.zip" ..."
 cd ..
 zip -r "$PLUGIN.zip" $PLUGIN   
 chown pi:pi "$PLUGIN.zip"
-logger "$0 addon SC updated"
+logger "$0 addon $PLUGIN updated"
 

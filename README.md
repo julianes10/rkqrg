@@ -22,7 +22,7 @@ sudo dd if=retropie-4.3-rpi2_rpi3.img of=/dev/mmcblk0
 Wifi settings is a must so that que can access ssh later from a laptop. It can be manually using GUI on retropie
 On the other hand you can setup in this file: e.g 
 /etc/wpa_supplicant/wpa_supplicant.conf 
-country=GB
+country=ES
 ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 network={
@@ -57,12 +57,15 @@ https://github.com/retropie/retropie-setup/wiki/MAME
 Once you put roms on folders, if emulator has been installed (from core or main setup or optional package), after a reboot, the games will be available from GUI.
 
 ## Setup kodi
-TODO
+See addon services
 
 ## Miscelaneous settings
+
 Automount with usb stick label. https://github.com/six-k/automount-usb.git
 Include in this repo as submodule. Run it with sudo ./CONFIGURE.sh
-For transmission daemon setings remember 
+For transmission daemon setings remember just install
+apt-get install transmmission-daemon
+And tune in etc the setting or copy the one in this repo
 
 ### Sharing files form USB disk with nfs
 #### Mount usb disk with bind 
