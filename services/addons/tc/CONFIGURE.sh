@@ -11,7 +11,7 @@ cp -rf "$NAME.service" /lib/systemd/system/
 
 mkdir -p $GIT_DIR
 cd $GIT_DIR
-sudo apt-get install git
+sudo apt-get install git zip
 apt-get install ant
 git clone https://github.com/tvalacarta/tvalacarta.git $PLUGIN 
 

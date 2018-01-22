@@ -7,30 +7,25 @@ TARGET_DIR="/opt/retropie/configs/ports/kodi/addons"
 TO_ZIP_DIR=$PLUGIN 
 
 logger "$0 Updating addon $PLUGIN..."
-cd /home/pi/git/xbmc
-git pull
+#DON'T DARE DO THIS cd /home/pi/git/xbmc
+#DON'T DARE DO THIS git pull
 cd $GIT_DIR/$PLUGIN
-git pull
+# DON'T DARE DO THIS UNLESS SOMTHING IS NOT WORKING OK, IT PROBABLY WON'T COMPILE IN YOUR BASELINE
+# git checkout master
+# git pull
+# git checkout -b Krypton
 
 #### REBUILT THE STUFF
 
+######### THIS INSTRUCTIONS SHALL BE ALLIGNED WITH KODI BASE LINE AND README.MD OF COMMIT YOU DOWNLOAD PVR
+######### THIS IS COMPATIBLE WITH 17.4 TAG AND  2.4.14-Krypton
 rm -rf build
 mkdir -p build
 cd build
-cmake -DADDONS_TO_BUILD=pvr.iptvsimple -DADDON_SRC_PREFIX=../.. -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../../xbmc/addons -DPACKAGE_ZIP=1 ../../xbmc/cmake/addons
+cmake -DADDONS_TO_BUILD=pvr.iptvsimple -DADDON_SRC_PREFIX=../.. -DCMAKE_BUILD_TYPE=Debug -DCMAKE_INSTALL_PREFIX=../../xbmc/addons -DPACKAGE_ZIP=1 ../../xbmc/project/cmake/addons
 make package-pvr.iptvsimple
 
-
-#if [ -d "$TARGET_DIR/$PLUGIN" ]; then
-#  logger "$0 Hot updating addon $PLUGIN... TODO"
-#  cp -rf * "$TARGET_DIR/$PLUGIN/"
-#  chown -R pi:pi "$TARGET_DIR/$PLUGIN/"
-#fi
-#logger "$0 Generate zip file "$PLUGIN.zip" ..."
-#cd ..
-#zip -r "$PLUGIN.zip" $PLUGIN   
-#chown pi:pi "$PLUGIN.zip"
-mv -f /home/pi/git/pvr.iptvsimple/build/pvr.iptvsimple-prefix/src/pvr.iptvsimple-build/addon-pvr.iptvsimple-3.4.1.zip $GIT_DIR
+mv -f /home/pi/git/pvr.iptvsimple/build/pvr.iptvsimple-prefix/src/pvr.iptvsimple-build/addon-pvr.iptvsimple-2.4.14.zip $GIT_DIR
 chown pi:pi "*.zip"
 logger "$0 addon $PLUGIN updated"
 

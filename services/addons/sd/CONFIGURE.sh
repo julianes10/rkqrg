@@ -11,7 +11,7 @@ cp -rf "$NAME.service" /lib/systemd/system/
 
 mkdir -p $GIT_DIR
 cd $GIT_DIR
-sudo apt-get install git
+sudo apt-get install git zip
 git clone https://github.com/boudabass/SportsDevil.git $PLUGIN 
 
 chmod 644 /lib/systemd/system/"$NAME.service" 
