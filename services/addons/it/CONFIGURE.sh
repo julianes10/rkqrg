@@ -4,6 +4,15 @@ PLUGIN="pvr.iptvsimple"
 GIT_DIR="/home/pi/git/" 
 NAME="ithotupdate"
 
+MY_PATH="`dirname \"$0\"`"              # relative
+MY_PATH="`( cd \"$MY_PATH\" && pwd )`"  # absolutized and normalized
+if [ -z "$MY_PATH" ] ; then
+  # error; for some reason, the path is not accessible
+  # to the script (e.g. permissions re-evaled after suid)
+  exit 1  # fail
+fi
+echo "$MY_PATH"
+
 echo "###############################################################"
 echo "###############################################################"
 echo "  HEADS UP: use a right baseline and the right instructions written in README.md file for this baseline"
@@ -33,7 +42,7 @@ git checkout 2a649d7e21b64c4fa4a8b14c2cc139261eebc7e8
 
 ######### NOTE UPDATE THIS EVERY TIME IS TOO MUCH AND IS TRICKY BECAUSE OF DEPENDS A LOT OF KODI BASELINE, I PREFER TUNE IT MANUALLY WHEN YOU MOVE FROM KODI
 #PLS, IF YOU USE KODI REPO BINARY, IT DEPENDS ON YOUR OS, E.G JESSIE LATEST KODI 17.4, HOWEVER KODI LATEST NOW IS KODI 17.7 SO....KEEP CALM AND COMPILE WHEN UPDATE.
-./"$NAME.sh"
+$MY_PATH/"$NAME.sh"
 #cp "$NAME.sh" /usr/local/bin/
 #cp -rf "$NAME.service" /lib/systemd/system/
 #chmod 644 /lib/systemd/system/"$NAME.service" 

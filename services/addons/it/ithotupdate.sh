@@ -26,7 +26,6 @@ cmake -DADDONS_TO_BUILD=pvr.iptvsimple -DADDON_SRC_PREFIX=../.. -DCMAKE_BUILD_TY
 make package-pvr.iptvsimple
 
 mv -f /home/pi/git/pvr.iptvsimple/build/pvr.iptvsimple-prefix/src/pvr.iptvsimple-build/addon-pvr.iptvsimple-2.4.14.zip $GIT_DIR
-chown pi:pi "*.zip"
 logger "$0 addon $PLUGIN updated"
 
 
