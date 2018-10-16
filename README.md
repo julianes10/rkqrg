@@ -18,7 +18,7 @@ Download [retropie|https://retropie.org.uk/download/] as base system for raspber
 
 sudo dd if=retropie-4.3-rpi2_rpi3.img of=/dev/mmcblk0
 
-## Wifi setup
+## Wifi setup (if pi3)
 Wifi settings is a must so that que can access ssh later from a laptop, install new things and get any update.
 It can be manually using GUI on retropie
 On the other hand you can setup in this file: e.g 
