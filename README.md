@@ -1,6 +1,8 @@
 # rkqrgs
 Retropie and kodi quick restore guide and scrips
 
+Check alternative kodi on top of raw raspbian below
+
 ## Introduction
 
 This is just to recover quickly a pi from scratch with the following stuff:
@@ -13,7 +15,7 @@ This is just to recover quickly a pi from scratch with the following stuff:
 
 The repo consists of basically a guide (this readme file to not forget the steps) and some scripts
 
-## Base installation
+## Retropie base installation
 Download [retropie|https://retropie.org.uk/download/] as base system for raspberry (raspbian flavour). Burn an SD (>2G) e.g: 
 
 sudo dd if=retropie-4.3-rpi2_rpi3.img of=/dev/mmcblk0
@@ -94,6 +96,20 @@ sudo update-rc.d rpcbind enable && sudo update-rc.d nfs-common enable
 [retropie for download | https://retropie.org.uk]
 [retropie repos| https://github.com/retropie]
 [kodi | https://kodi.tv/]
+
+
+## kodi on top of raw raspbian
+Burn SD with NOOBS 
+Select raspbian lite and do the wifi setup
+Reboot once ready
+Enter terminal console (with keyboard and screen connected) , user pi, pass: raspberry
+Enable ssh and change pass sudo raspi-config (https://www.raspberrypi.org/documentation/remote-access/ssh/)
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install kodi
+Enable ssh https://www.raspberrypi.org/documentation/remote-access/ssh/
+Add noip as a service (check SCS TODO, now this repo)
+Add kodi as a service (check SCS TODO, now ipaem repo)
 
 
 
